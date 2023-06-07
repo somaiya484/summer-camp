@@ -1,4 +1,5 @@
 import About from "../About/About";
+import Accordion from "../Accordions/Accordion";
 import Instructor from "../Instructor/Instructor";
 import PopularClass from "../PopularClass/PopularClass";
 import TotalDay from "../TotalDay/TotalDay";
@@ -12,6 +13,7 @@ const Home = () => {
             <PopularClass></PopularClass>
             <About></About>
             <Instructor></Instructor>
+            <Accordion></Accordion>
         </div>
     );
 };
