@@ -1,0 +1,8 @@
+.about-section{
+    background-image: linear-gradient(rgba(212, 117, 29, 0.046), rgba(108, 49, 4, 0.562), rgba(68, 31, 1, 0.671)), url('../../../assets//bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgb(253, 233, 233);
+
+}
