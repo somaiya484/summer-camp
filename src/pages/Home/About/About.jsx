@@ -1,6 +1,7 @@
 import aboutImage from "../../../assets/about.jpg"
-import bg from "../../../assets/bg.jpg"
+// import bg from "../../../assets/bg.jpg"
 import Sectiontitels from "../../../components/sectiontitels/Sectiontitels";
+import './About.css'
 
 const About = () => {
     return (
