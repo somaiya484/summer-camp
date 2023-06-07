@@ -1,7 +1,7 @@
 
 const TotalDay = () => {
     return (
-        <div className="flex flex-col md:flex-row justify-evenly items-center text-yellow-700 py-5 -mt-2 md:h-[110px]">
+        <div className="flex flex-col md:flex-row justify-evenly items-center text-yellow-700 py-5 -mt-2 md:h-[110px] bg-slate-50">
             <div>
                 <h2 className=" text-4xl font-bold text-yellow-700 items-center text-center">Don't miss the first <br /> day of Summer Camp!</h2>
             </div>
