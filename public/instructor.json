@@ -1,0 +1,134 @@
+  [
+    {
+      "id": "1",
+      "classImage": "https://www.thecaliforniaconservatory.com/wp-content/uploads/2022/08/M13470-How-Piano-Lessons-Set-Children-Up-For-Success-Hero-Image.jpg",
+      "instructorName": "John Smith",
+      "instructorImage": "https://images.squarespace-cdn.com/content/v1/5a8bff10f9a61e9d6ff8d454/f099275c-fa1c-4804-8a8e-4d83fa85425c/Alex+Shore+Teaching+1+2.jpg",
+      "instructorEmail": "john.smith@gmail.com",
+      "classesTaken": 10,
+      "classes": "Piano",
+      "availableSeats": 5,
+      "price": 100
+    },
+    {
+      "id": "2",
+      "classImage": "https://uknow.uky.edu/sites/default/files/styles/uknow_story_image/public/externals/3ecda3c498892d84d7c28d72303ffab4.jpg",
+      "instructorName": "Sarah Johnson",
+      "instructorImage": "https://www.lessonface.com/sites/default/files/styles/lesson_product_page/public/individual-lessons/64328301-1134009116800123-4708011702401105920-n.jpg",
+      "instructorEmail": "sarah@gmail.com",
+      "classesTaken": 8,
+      "classes": "Violin",
+      "availableSeats": 3,
+      "price": 90
+    },
+    {
+      "id": "3",
+      "classImage": "https://cdn.musichouseschool.com/adult-drum-lessons-kansas-city__1_.jpeg",
+      "instructorName": "Michael Brown",
+      "instructorImage": "https://uploads-ssl.webflow.com/628a7646eb1b20bb30c06b9d/628aa4beeb1b20a2efc1bca3_meet.simon_.png",
+      "instructorEmail": "michael.brown@gmail.com",
+      "classesTaken": 12,
+      "classes": "Drums",
+      "availableSeats": 2,
+      "price": 80
+    },
+    {
+      "id": "4",
+      "classImage": "https://images.squarespace-cdn.com/content/v1/5d4c8507f83bdc0001f77b73/1573848020991-8TREEA5ZXEZ6N7FTY232/Flute+Lessons+at+Adventures+in+Music.jpg",
+      "instructorName": "Emily Davis",
+      "instructorImage": "https://nospr.org.pl/public/upload/people/medium/5fb7b8f974521.jpg",
+      "instructorEmail": "emily.davis@gmail.com",
+      "classesTaken": 6,
+      "classes": "Flute",
+      "availableSeats": 4,
+      "price": 95
+    },
+    {
+      "id": "5",
+      "classImage": "https://billplakemusic.org/wp-content/uploads/2019/09/Screen-Shot-2019-09-16-at-3.52.57-PM.png?w=640",
+      "instructorName": "David Wilson",
+      "instructorImage": "https://www.bellevuecollege.edu/wp-content/uploads/sites/79/2022/06/jim_rotondi.jpeg",
+      "instructorEmail": "david.wilson@gmail.com",
+      "classesTaken": 15,
+      "classes": "Jazz Improvisation",
+      "availableSeats": 0,
+      "price": 110
+    },
+    {
+      "id": "6",
+      "classImage": "https://www.esm.rochester.edu/uploads/13-HatchChamberMusic.jpg",
+      "instructorName": "jack Lee",
+      "instructorImage": "https://static.wixstatic.com/media/d88eb9_05dddc63846241f68f6ceb2883a2f83c.png/v1/fill/w_640,h_426,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d88eb9_05dddc63846241f68f6ceb2883a2f83c.png",
+      "instructorEmail": "jack.lee@gmail.com",
+      "classesTaken": 7,
+      "classes": "Ensemble",
+      "availableSeats": 1,
+      "price": 85
+    },
+    {
+      "id": "7",
+      "instructorImage": "https://aup.imgix.net/user_images/101107/private-lessons-learn-speak-write-greek-language-1631457288.jpg",
+      "instructorName": "Robert Johnson",
+      "classImage": "https://www.classical-guitar-music.com/wp-content/uploads/2014/10/music-theory-notes-staf.jpg",
+      "instructorEmail": "robert.johnson@gmail.com",
+      "classesTaken": 9,
+      "classes": "Music Theory",
+      "availableSeats": 6,
+      "price": 95
+    },
+    {
+      "id": "8",
+      "classImage": "https://necmusic.edu/sites/default/files/styles/large_landscape/public/2017-03/HERO_Prep-Brass_1795.jpg?itok=GZyZiedk",
+      "instructorName": "zinar Wilson",
+      "instructorImage": "https://www.rncm.ac.uk/uploads/WBP_Jazz_Trumpet_2019.jpg",
+      "instructorEmail": "zinar.wilson@gmail.com",
+      "classesTaken": 11,
+      "classes": "Saxophone",
+      "availableSeats": 3,
+      "price": 105
+    },
+    {
+      "id": "9",
+      "classImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5_5g1fcrdrEVZXu9n-UxrC6z8yGfM9_IALaTBse4Vhx8OLlGGGTtuE_p5Yu7vKcdftUs&usqp=CAU",
+      "instructorName": "Andrew Thompson",
+      "instructorImage": "https://image.jimcdn.com/app/cms/image/transf/dimension=210x1024:format=jpg/path/sb838270f12a11990/image/i150f1680cebe0b6a/version/1457671608/image.jpg",
+      "instructorEmail": "andrew.thompson@gmail.com",
+      "classesTaken": 5,
+      "classes": "Brass Ensemble",
+      "availableSeats": 4,
+      "price": 90
+    },
+    {
+      "id": "10",
+      "classImage": "https://i0.wp.com/www.esm.rochester.edu/uploads/13-HatchChamberMusic.jpg",
+      "instructorName": "Sophia Davis",
+      "instructorImage": "https://images.squarespace-cdn.com/content/v1/5f7752e412cd2d65a16300ca/1642694867560-16W7VQO7V8MDCZMSHKXB/AprilReedCox-FAI19-1346.jpg?format=1500w",
+      "instructorEmail": "Sophia Davi@gmail.com",
+      "classesTaken": 13,
+      "classes": "Cello",
+      "availableSeats": 2,
+      "price": 100
+    },
+    {
+      "id": "11",
+      "classImage": "https://online.berklee.edu/takenote/wp-content/uploads/2021/01/acoustic_guitar_techniques_article_image_2021.jpg",
+      "instructorName": "Olivia Roberts",
+      "instructorImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNdcvuVRNvMcN_fxvSLnliqhcr5quud2xClVYIvs3PzQB99ViBplY8cS3ia_TcTnVI9Lw&usqp=CAU",
+      "instructorEmail": "olivia.roberts@gmail.com",
+      "classesTaken": 6,
+      "classes": "Guitar",
+      "availableSeats": 3,
+      "price": 90
+    },
+    {
+      "id": "12",
+      "classImage": "https://www.markprzybylowski.com/wp-content/uploads/2016/01/Rhythm-Study-1-16th-Notes.png",
+      "instructorName": "Daniel Adams",
+      "instructorImage": "https://www.soundbrenner.com/wp-content/uploads/2021/01/ProfileBig_iPad_Jerold@2x.jpg",
+      "instructorEmail": "daniel.adams@gmail.com",
+      "classesTaken": 10,
+      "classes": "Rhythm Studies",
+      "availableSeats": 1,
+      "price": 80
+    }
+  ]

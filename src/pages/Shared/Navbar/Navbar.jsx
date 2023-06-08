@@ -3,8 +3,8 @@ import img1 from '../../../assets/logo1.png'
 
 const Navbar = () => {
     const navItem = <>
-        <li><a>Home</a></li>
-        <li><a>Instructors</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/instructor">Instructors</Link></li>
         <li><a>Classes</a></li>
         <li className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700
         '>Login</li>
