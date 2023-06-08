@@ -31,15 +31,17 @@ const InstructorsPage = () => {
                     </div>
                 </div>
             </Parallax>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 px-20 w-[100%] mx-auto mt-8">
+            <p className="my-8 text-center text-base text-gray-700 font-medium ">
+                ____Here is our talented tutor____
+            </p>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 px-20 pl-32 mb-10">
                 {
                     instructors.map((instructor) => (
-                        <div key={instructor} className="card w-96 bg-base-100 shadow-xl image-full">
-                            <figure><img src={instructor.classImage} alt="Shoes" /></figure>
+                        <div key={instructor} className="card w-96 bg-base-100 shadow-xl">
+                            <figure><img src={instructor.instructorImage} className="" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{instructor.instructorName}</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <img src={instructor.instructorImage} alt="" />
                                 <div className="card-actions justify-end">
                                     <button className="btn btn-primary">Buy Now</button>
                                 </div>
