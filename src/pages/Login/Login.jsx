@@ -1,4 +1,9 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../authProvider/AuthProvider';
+import { data } from 'autoprefixer';
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
     const {
@@ -7,7 +12,17 @@ const Login = () => {
         watch,
         formState: { errors }
     } = useForm();
-    const onSubmit = data => console.log(data);
+
+    const { signIn } = useContext(AuthContext)
+
+    const onSubmit = data => {
+        console.log(data)
+    };
+    signIn(data)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
     return (
         <div className=' my-16'>
             <div className='bg-[#ffbf0000] p-16 rounded w-[600px] mx-auto shadow-2xl'>
@@ -33,10 +48,10 @@ const Login = () => {
 
                     {errors.name && errors.password && <span>This field is required</span>}
 
-                    <input className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700 ml-2 mt-3' type="submit" />
+                    <input className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700 ml-2 mt-3' value="Login" type="submit" />
                 </form>
+                <small><Link to="/signUp">New here? Then SignUp</Link></small>
             </div>
-
         </div>
     );
 };
