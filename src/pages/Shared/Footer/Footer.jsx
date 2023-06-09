@@ -1,8 +1,8 @@
 import logo from "../../../assets/logo1.png"
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer p-10 bg-[#111827] text-white  text-base-content">
+        <div className="">
+             <footer className="footer p-10 bg-[#111827] text-white  text-base-content">
                 <div>
                     <img width="100" height="100" src={logo} alt="" />
                     <p><small className=" normal-case text-lg font-semibold text-gray-800 italic">Instru<span className='text-yellow-700'>Learn</span></small><br />Unlock  potential with InstrLearn</p>
