@@ -7,7 +7,7 @@ const Navbar = () => {
         <li><Link to="/instructor">Instructors</Link></li>
         <li><a>Classes</a></li>
         <li className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700
-        '>Login</li>
+        '><Link to="/login">Login</Link></li>
     </>
 
     return (

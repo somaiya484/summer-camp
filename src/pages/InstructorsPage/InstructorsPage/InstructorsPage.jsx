@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const InstructorsPage = () => {
     const [instructors, setInstructors] = useState([]);
     useEffect(() => {
-        fetch('instructor.json')
+        fetch('http://localhost:5000/instructor')
             .then(res => res.json())
             .then(data => {
                 setInstructors(data);
@@ -38,13 +38,11 @@ const InstructorsPage = () => {
                 {
                     instructors.map((instructor) => (
                         <div key={instructor} className="card w-96 bg-base-100 shadow-xl">
-                            <figure><img src={instructor.instructorImage} className="" /></figure>
+                            <figure><img src={instructor.instructorImage} className="h-[250px] w-full" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title">{instructor.instructorName}</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Buy Now</button>
-                                </div>
+                                <h2 className="card-title text-2xl text-yellow-700 italic">{instructor.instructorName}</h2>
+                                <p className="text-base mt-1 text-gray-700 font-medium ">Instructor of {instructor.classes}</p>
+                                <p className="text-base mt-1 text-gray-700 font-medium ">{instructor.instructorEmail}</p>
                             </div>
                         </div>
                     ))
