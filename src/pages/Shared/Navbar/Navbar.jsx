@@ -17,21 +17,23 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructor">Instructors</Link></li>
         <li><Link to="/classes">Classes</Link></li>
-        <li>
-            <Link to="/dashboard/myClasses">
-                <button className="btn gap-2">
-                    <div className="badge badge-secondary">+{clas?.length || 0}</div>
-                </button>
-            </Link>
-        </li>
+        {
+            user && <li>
+                <Link to="/dashboard/myClasses">DashBoard</Link>
+            </li>
+        }
+        {
+            user && <li><img className="rounded-full w-[90px] h-[80px] flex justify-center items-center  -mt-5" src={user.photoURL} alt="" /></li>
+
+        }
+
         {
             user ? <>
-                <li>{user?.displayName}</li>
                 <li onClick={handleLogOut} className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700
         '>LogOut</li>
             </> : <>
-                <li className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700
-        '><Link to="/login">Login</Link></li>
+                <Link to="/login"><li className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700
+        '>Login</li></Link>
             </>
         }
     </>
