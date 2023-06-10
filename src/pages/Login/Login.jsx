@@ -58,7 +58,7 @@ const Login = () => {
                             {errors.password && <p>{errors.password.message}</p>}
                         </div>
 
-                        <input className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700 ml-2 mt-2 w-1/4' value="SignUp" type="submit" />
+                        <input className='btn bg-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700 ml-2 mt-2 w-1/4' value="Login" type="submit" />
                     </form>
                     <p><small><Link to="/signUp">Already have an account Login</Link></small></p>
                 </div>

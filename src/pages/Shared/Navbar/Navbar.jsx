@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import img1 from '../../../assets/logo1.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../authProvider/AuthProvider';
+import useClasses from '../../../hook/useClasses';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [clas] = useClasses();
 
     const handleLogOut = () => {
         logOut()
@@ -15,8 +17,13 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructor">Instructors</Link></li>
         <li><Link to="/classes">Classes</Link></li>
-        <li><Link to="/dashboard/myClasses">Dashboard</Link></li>
-
+        <li>
+            <Link to="/dashboard/myClasses">
+                <button className="btn gap-2">
+                    <div className="badge badge-secondary">+{clas?.length || 0}</div>
+                </button>
+            </Link>
+        </li>
         {
             user ? <>
                 <li>{user?.displayName}</li>
