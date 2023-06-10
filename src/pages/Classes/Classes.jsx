@@ -1,25 +1,15 @@
 import classesImg from "../../assets/classes.jpg"
 import { Parallax } from 'react-parallax';
 import { useEffect, useState } from "react";
-import { useContext } from "react";
-import { AuthContext } from "../../authProvider/AuthProvider";
-import Swal from "sweetalert2";
-import { useNavigate, useLocation } from "react-router-dom"
+
+import SingleClass from "../SingleClass/SingleClass";
 
 const Classes = () => {
-    const { user } = useContext(AuthContext);
-    const navigate = useNavigate();
-    const location = useLocation();
+
 
     const [classes, setClasses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/instructor', {
-            method:'POST',
-            headers:{
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify()
-        })
+        fetch('http://localhost:5000/instructor')
             .then(res => res.json())
             .then(data => {
                 setClasses(data);
@@ -27,38 +17,6 @@ const Classes = () => {
     }, []);
 
 
-    const handleSelectClass = clas => {
-        console.log(clas);
-        if (user) {
-            fetch('http://localhost:5000/class')
-                .then(res => res.json())
-                .then(data => {
-                    if (data.insertId) {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Your Class has been selected ',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    }
-                })
-        }
-        else {
-            Swal.fire({
-                title: 'Please Login Order The food',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Login Now'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    navigate("/login", {state:{from:location}})
-                }
-            })
-        }
-    }
 
     return (
         <>
@@ -84,21 +42,10 @@ const Classes = () => {
             </p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 px-20 pl-32 mb-10">
                 {
-                    classes.map((clas) => (
-                        <div key={clas} className="card w-96 bg-base-100 shadow-xl">
-                            <figure><img src={clas.classImage} className="h-[250px] w-full" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title text-xl text-yellow-700 italic">{clas.classes}</h2>
-                                <p className="text-base  text-gray-700 font-medium ">Instructor of {clas.instructorName}</p>
-                                <p className="text-base  text-gray-700 font-medium ">Instructor of {clas.availableSeats}</p>
-                                <p className="text-base  text-gray-700 font-medium ">Instructor of {clas.price}</p>
-                                <p className="text-base  text-gray-700 font-medium ">{clas.instructorEmail}</p>
-                            </div>
-                            <div className="card-actions justify-center">
-                                <button onClick={() => handleSelectClass(clas)} className=" bg-yellow-700 border-2 border-yellow-700 text-white font-semibold rounded-md  hover:bg-transparent hover:border-yellow-700 hover:border-2 hover:text-yellow-700 py-1 px-3">Enroll Now</button>
-                            </div>
-                        </div>
-                    ))
+                    classes.map((clas) => <SingleClass 
+                    key={clas._id} clas={clas}
+                    ></SingleClass>
+                    )
                 }
             </div>
         </>
