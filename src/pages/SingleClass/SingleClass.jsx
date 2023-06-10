@@ -13,18 +13,18 @@ const SingleClass = ({ clas }) => {
 
     const handleSelectClass = clas => {
         console.log(clas);
-        if (user) {
-            const addClass = { classId:_id, classImage }
+        if (user && user.email) {
+            const addClass = { classId: _id,  classImage, classes, availableSeats, price, instructorName, email: user.email}
             fetch('http://localhost:5000/class', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify()
+                body: JSON.stringify(addClass)
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.insertId) {
+                    if (data.insertedId) {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
