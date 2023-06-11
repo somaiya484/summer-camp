@@ -9,6 +9,8 @@ import Classes from "../pages/Classes/Classes";
 import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../Layout/Dashboard";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
+import ProvateRoute from "../Routes/ProvateRoute"
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -39,12 +41,16 @@ export const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <Dashboard></Dashboard>, 
+    element:<ProvateRoute><Dashboard></Dashboard></ProvateRoute> ,  
     children: [
       {
         path: 'myClasses', 
         element: <MyClasses></MyClasses>
-      }
+      },
+      {
+        path: 'allUsers', 
+        element: <AllUsers></AllUsers>
+      },
     ]
   }
 ]);

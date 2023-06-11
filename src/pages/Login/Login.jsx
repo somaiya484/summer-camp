@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import Swal from 'sweetalert2'
+import GoogleSignIn from "../Shared/GoogleSignIn/GoogleSignIn";
 
 
 const Login = () => {
@@ -38,6 +39,7 @@ const Login = () => {
             <div className=' my-5'>
                 <div className='bg-[#ffbf0000] p-5 rounded w-[500px] mx-auto shadow-2xl'>
                     <h1 className="text-4xl italic font-bold text-yellow-700 uppercase text-center">Login</h1>
+                    <GoogleSignIn></GoogleSignIn>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
                         <div className="form-control">

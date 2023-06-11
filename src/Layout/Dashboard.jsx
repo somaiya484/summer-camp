@@ -6,7 +6,10 @@ import { AuthContext } from "../authProvider/AuthProvider";
 
 const Dashboard = () => {
     const [clas] = useClasses();
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
+
+    const isAdmin = true;
+
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -21,21 +24,27 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay "></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content  bg-[#ecd8a3ed]">
                     <div className="flex flex-col justify-center items-center mb-5">
-                        <li><img className="rounded-full w-28 h-28 " src={user.photoURL} alt="" /></li>
+                        <li><img className="rounded-full w-28 h-24 " src={user.photoURL} alt="" /></li>
                         <li>{user.email}</li>
                     </div>
 
+                    {
+                        isAdmin ? <>
+                            <li><NavLink to="/dashboard/home"><FaHome></FaHome>Admin Home</NavLink></li>
+                            <li><NavLink to="/dashboard/enrolled">Manage Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/allUsers"> Manage Users</NavLink></li>
+                        </> : <>
+                            <li><NavLink to="/dashboard/home"><FaHome></FaHome>User Home</NavLink></li>
+                            <li>
+                                <NavLink to="/dashboard/myClasses"> My Selected Class
+                                    <span className="badge inl badge-secondary">+{clas?.length || 0}</span>
+                                </NavLink>
 
-                    {/* Sidebar content here */}
-                    <li><NavLink to="/dashboard/home"><FaHome></FaHome>User Home</NavLink></li>
-                    <li>
-                        <NavLink to="/dashboard/myClasses"> My Selected Class
-                            <span className="badge inl badge-secondary">+{clas?.length || 0}</span>
-                        </NavLink>
-
-                    </li>
-                    <li><NavLink to="/dashboard/enrolled">Enrolled Class</NavLink></li>
-                    <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment</NavLink></li>
+                            </li>
+                            <li><NavLink to="/dashboard/enrolled">Enrolled Class</NavLink></li>
+                            <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment</NavLink></li>
+                        </>
+                    }
 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
