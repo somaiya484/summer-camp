@@ -11,11 +11,17 @@ import Dashboard from "../Layout/Dashboard";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import ProvateRoute from "../Routes/ProvateRoute"
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import AddClass from "../pages/Dashboard/AddClass/AddClass";
+import AdminRoutes from "./AdminRoutes";
+import ManageClass from "../pages/Dashboard/ManageClass/ManageClass";
+import ErrorPage from "../pages/Errorpage/ErrorPage";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -36,7 +42,7 @@ export const router = createBrowserRouter([
       {
         path: '/signUp',
         element: <SignUp></SignUp>
-      }
+      },
     ]
   },
   {
@@ -48,9 +54,21 @@ export const router = createBrowserRouter([
         element: <MyClasses></MyClasses>
       },
       {
+        path: 'payment', 
+        element: <Payment></Payment>
+      },
+      {
         path: 'allUsers', 
         element: <AllUsers></AllUsers>
       },
+      {
+        path: 'manageClass', 
+        element:<ManageClass></ManageClass>
+      },
+      {
+        path:'addclass',
+        element:<AddClass></AddClass>
+      }
     ]
-  }
+  },
 ]);

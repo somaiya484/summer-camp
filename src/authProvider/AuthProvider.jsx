@@ -47,13 +47,13 @@ const AuthProvider = ({ children }) => {
                         console.log(data.data.token)
                         localStorage.setItem('access-token', data
                             .data.token)
+                        setLoading(false);
                     })
             }
-            else{
+            else {
                 localStorage.removeItem('access-token')
             }
             console.log('current user', currentUser);
-            setLoading(false);
         });
         return () => {
             return unsubscribe();

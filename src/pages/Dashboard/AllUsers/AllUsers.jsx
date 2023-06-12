@@ -1,33 +1,55 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hook/useAxiosSecure";
 
 
 
 const AllUsers = () => {
+    const [axiosSecure] = useAxiosSecure();
 
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
 
-    const handleMakeAdmin = user =>{
-     fetch(`http://localhost:5000/users/admin/${user._id}`, {
-        method: 'PATCH'
-     })   
-     .then(res => res.json())
-     .then(data => {
-        console.log(data)
-        if(data.modifiedCount){
-            refetch();
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Transfer role Admin',
-                showConfirmButton: false,
-                timer: 1500
-              })
-        }
-     })
+    const handleMakeAdmin = user => {
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Transfer role Admin',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+    const handleMakeInstructor = user => {
+        fetch(`http://localhost:5000/users/instructors/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if (data.modifiedCount) {
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Transfer role Instructor',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })        
     }
 
     return (
@@ -68,13 +90,17 @@ const AllUsers = () => {
                                 <td>
                                     {
                                         user.role === 'admin' ? 'admin' :
-                                            <button onClick={() => handleMakeAdmin(user)}  className=" py-2 px-4 rounded bg-yellow-700  text-white ">Admin</button>
+                                            <button onClick={() => handleMakeAdmin(user)} className=" py-2 px-4 rounded bg-yellow-700  text-white ">
+                                                Admin
+                                            </button>
                                     }
                                 </td>
                                 <td>
                                     {
                                         user.role === 'instructor' ? 'instructor' :
-                                            <button className=" py-2 px-4 rounded bg-yellow-700  text-white ">Instructor</button>
+                                            <button onClick={() => handleMakeInstructor(user)} className=" py-2 px-4 rounded bg-yellow-700  text-white ">
+                                                Instructor
+                                            </button>
                                     }
                                 </td>
                             </tr>)

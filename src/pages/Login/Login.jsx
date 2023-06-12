@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
@@ -7,6 +7,10 @@ import GoogleSignIn from "../Shared/GoogleSignIn/GoogleSignIn";
 
 
 const Login = () => {
+    const [show, setShow] = useState(false);
+    const handleShow = () => {
+        setShow(!show);
+    }
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { signIn } = useContext(AuthContext);
@@ -30,7 +34,7 @@ const Login = () => {
                         popup: 'animate__animated animate__fadeOutUp'
                     }
                 });
-                navigate(from, {replace: true});
+                navigate(from, { replace: true });
             })
     };
 
@@ -51,11 +55,14 @@ const Login = () => {
                         </div>
 
                         <div>
-                            <label className='text-base mt-3 text-gray-700 font-medium  block ml-3'>Password</label>
+                            <label className='text-base mt-3 text-gray-700 font-medium  block ml-3'><p>Password</p></label>
 
-                            <input className="border-yellow-500 border-2 shadow-md p-4 m-2 rounded w-3/4"
-                                type="password"
-                                {...register("password", { require: true })} />
+                            <div className="flex justify-between items-center">
+                                <input className="border-yellow-500 border-2 shadow-md p-4 m-2 rounded w-3/4" placeholder="Password"
+                                    type={show?"text":"password"}
+                                    {...register("password", { require: true })}
+                                /> <p onClick={handleShow} className="-ml-14 cursor-pointer">{show?"hide":"show"}</p>
+                            </div>
 
                             {errors.password && <p>{errors.password.message}</p>}
                         </div>
