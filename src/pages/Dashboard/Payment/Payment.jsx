@@ -28,25 +28,3 @@ export default Payment;
 
 
 
-
-// import { loadStripe } from '@stripe/stripe-js';
-// import CheckOut from './checkOut';
-// import { Elements } from '@stripe/react-stripe-js';
-
-
-// const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
-
-// const Payment = () => {
-//     return (
-//         <div>
-//             <h3 className="italic capitalize text-yellow-800 font-semibold h-[60px] flex justify-evenly items-center py-10 text-3xl">
-//                 Payment
-//             </h3>
-//             <Elements stripe={stripePromise}>
-//                 <CheckOut></CheckOut>
-//             </Elements>
-//         </div>
-//     );
-// };
-
-// export default Payment;
