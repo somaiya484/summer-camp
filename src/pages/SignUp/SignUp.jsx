@@ -20,7 +20,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = {name:data, email: data.email}
-                         fetch('http://localhost:5000/users', {
+                         fetch(' https://summer-camp-server-somaiyai342-gmailcom.vercel.app/users', {
                             method:'POST',
                             headers: {
                                 'content-type':'application/json'

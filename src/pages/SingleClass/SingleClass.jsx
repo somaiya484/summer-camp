@@ -17,7 +17,7 @@ const SingleClass = ({ clas }) => {
         console.log(clas);
         if (user && user.email) {
             const addClass = { classId: _id,  classImage, classes, availableSeats, price, instructorName, email: user.email}
-            fetch('http://localhost:5000/class', {
+            fetch(' https://summer-camp-server-somaiyai342-gmailcom.vercel.app/class', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
