@@ -12,8 +12,6 @@ import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import ProvateRoute from "../Routes/ProvateRoute"
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
-import AdminRoutes from "./AdminRoutes";
-import ManageClass from "../pages/Dashboard/ManageClass/ManageClass";
 import ErrorPage from "../pages/Errorpage/ErrorPage";
 import Payment from "../pages/Dashboard/Payment/Payment";
 
@@ -21,7 +19,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -45,29 +43,26 @@ export const router = createBrowserRouter([
       },
     ]
   },
+  
   {
     path: 'dashboard',
-    element:<ProvateRoute><Dashboard></Dashboard></ProvateRoute> ,  
+    element: <ProvateRoute><Dashboard></Dashboard></ProvateRoute>,
     children: [
       {
-        path: 'myClasses', 
+        path: 'myClasses',
         element: <MyClasses></MyClasses>
       },
       {
-        path: 'payment', 
+        path: 'payment',
         element: <Payment></Payment>
       },
       {
-        path: 'allUsers', 
+        path: 'allUsers',
         element: <AllUsers></AllUsers>
       },
       {
-        path: 'manageClass', 
-        element:<ManageClass></ManageClass>
-      },
-      {
-        path:'addclass',
-        element:<AddClass></AddClass>
+        path: 'addclass',
+        element: <AddClass></AddClass>
       }
     ]
   },

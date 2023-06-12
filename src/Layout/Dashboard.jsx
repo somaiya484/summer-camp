@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     // const isAdmin = true;
     const [isAdmin] = useAdmin();
-    const isInstructor = true;
+    // const isInstructor = true;
 
     return (
         <div className="drawer lg:drawer-open">
@@ -35,22 +35,7 @@ const Dashboard = () => {
 
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/manageClass">Manage Classes</NavLink></li>
                             <li><NavLink to="/dashboard/allUsers"> Manage Users</NavLink></li>
-                        </> : <>
-                            <li>
-                                <NavLink to="/dashboard/myClasses"> My Selected Class
-                                    <span className="badge inl badge-secondary">+{clas?.length || 0}</span>
-                                </NavLink>
-
-                            </li>
-                            <li><NavLink to="/dashboard/enrolled">Enrolled Class</NavLink></li>
-                            <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment</NavLink></li>
-                        </>
-                    }
-                    {/* {
-                        isInstructor ? <>
-                            <li><NavLink to="/dashboard/enrolled">My Class</NavLink></li>
                             <li><NavLink to="/dashboard/addclass">Add class</NavLink></li>
                         </> : <>
                             <li>
@@ -59,10 +44,9 @@ const Dashboard = () => {
                                 </NavLink>
 
                             </li>
-                            <li><NavLink to="/dashboard/enrolled">Enrolled Class</NavLink></li>
                             <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment</NavLink></li>
                         </>
-                    } */}
+                    }
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
                     <li><NavLink to="/instructor">Instructor</NavLink></li>
